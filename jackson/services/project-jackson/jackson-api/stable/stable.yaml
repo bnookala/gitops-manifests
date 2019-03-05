@@ -34,13 +34,13 @@ spec:
             requests:
               cpu: 250m
               memory: 64Mi
-            
+
           ports:
           - containerPort: 8080
             name: api
           - containerPort: 5005
             name: jvm-debug
-          
+
           env:
           - name: SERVER_SERVLET_CONTEXT_PATH
             value: "/api"
@@ -74,5 +74,3 @@ spec:
             value: "jaeger-agent.jaeger.svc.cluster.local"
           - name: JAEGER_AGENT_PORT
             value: "6831"
-          imagePullSecrets:
-          - name: regcred # Must be created and configured into kubectl
