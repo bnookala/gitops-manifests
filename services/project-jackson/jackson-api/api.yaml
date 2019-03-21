@@ -35,8 +35,8 @@ metadata:
   name: jackson-api
 spec:
     # https://istio.io/docs/reference/config/istio.networking.v1alpha3/#VirtualService
-  gateways: # The default `mesh` value for when left blank is doesn't seem to propigate the rule properly. For now, always use a list of FQDN gateways
-    - jackson-gateway # must be FQDN if VirtualService in different NS than Gateway
+  gateways:
+  - jackson-gateway
   hosts:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
@@ -45,7 +45,7 @@ spec:
   http:
   - match:
       - uri:
-        prefix: /api
+          prefix: /api
     route:
     - destination:
         host: "jackson-api.default.svc.cluster.local"
