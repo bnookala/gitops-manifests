@@ -21,8 +21,8 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
-      privateKey: /etc/istio/ingressgateway-certs/tls.key
+      serverCertificate: /etc/istio/keyvault-certs/jackson-cert
+      privateKey: /etc/istio/keyvault-certs/jackson-key
     hosts:
     - "*"
 
