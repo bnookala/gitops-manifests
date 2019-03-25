@@ -2934,7 +2934,7 @@ spec:
         flexVolume:
           driver: "azure/kv"
           secretRef:
-            kvcreds
+            name: kvcreds
           options:
             usepodidentity: "false"
             keyvaultname: "jackson-vault"
